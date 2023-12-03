@@ -1,0 +1,18 @@
+{
+    "schemaVersion": "1.0",
+    "artifacts": {
+        "__LIBRARY__": {
+            "version": "__VERSION__",
+            "type": "executable",
+            "variants": [
+                {
+                    "path": "__LIBRARY__-__VERSION__-macos/bin/__LIBRARY__",
+                    "supportedTriples": [
+                        "x86_64-apple-macosx", 
+                        "arm64-apple-macosx"
+                    ]
+                }
+            ]
+        }
+    }
+}
