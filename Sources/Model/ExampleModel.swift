@@ -9,5 +9,5 @@ import Foundation
 
 public struct ExampleModel {
 
-  public let value: String
+    public let value: String
 }

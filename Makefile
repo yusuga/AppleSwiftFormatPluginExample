@@ -44,6 +44,20 @@ app: \
   swiftpm \
   open
 
+## Analyze the Swift code for style and formatting issues.
+.PHONY: lint
+lint:
+	@echo "🛠️ $@"
+	$(SWIFT_PLUGIN) lint-source-code
+	@echo "✅ $@"
+
+## Automatically correct style and formatting issues.
+.PHONY: format
+format:
+	@echo "🛠️ $@"
+	$(SWIFT_PLUGIN) --allow-writing-to-package-directory format-source-code
+	@echo "✅ $@"
+
 ## Delete the artifacts of the environment setup and the app's cache.
 .PHONY: clean
 clean: \
@@ -116,18 +130,6 @@ endif
 plugin_list:
 	@echo "🛠️ $@"
 	$(SWIFT_PLUGIN) --list
-	@echo "✅ $@"
-
-.PHONY: lint
-lint:
-	@echo "🛠️ $@"
-	$(SWIFT_PLUGIN) lint-source-code
-	@echo "✅ $@"
-
-.PHONY: format
-format:
-	@echo "🛠️ $@"
-	$(SWIFT_PLUGIN) --allow-writing-to-package-directory format-source-code
 	@echo "✅ $@"
 
 .PHONY: swift_format_dump_configuration

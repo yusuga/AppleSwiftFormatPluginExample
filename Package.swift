@@ -17,22 +17,22 @@ let package = Package(
     .package(url: "git@github.com:apple/swift-format.git", from: "509.0.0"),
   ],
   targets: [
-//    .plugin(
-//      name: "SwiftFormatLintPlugin",
-//      capability: .buildTool(),
-//      dependencies: [
-//        "SwiftFormatBinary"
-//      ]
-//    ),
-//    .binaryTarget(
-//      name: "SwiftFormatBinary",
-//      path: "./artifactbundle/swift-format.artifactbundle"
-//    ),
+    .plugin(
+      name: "SwiftFormatLintPlugin",
+      capability: .buildTool(),
+      dependencies: [
+        "SwiftFormatBinary"
+      ]
+    ),
+    .binaryTarget(
+      name: "SwiftFormatBinary",
+      path: "./artifactbundle/swift-format.artifactbundle"
+    ),
     .target(
-      name: "Model"/*,
+      name: "Model",
       plugins: [
         "SwiftFormatLintPlugin",
-      ]*/
+      ]
     ),
   ]
 )
